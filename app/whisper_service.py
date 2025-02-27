@@ -2,9 +2,6 @@ import whisper
 import tempfile
 import os
 
-# Manually define the ffmpeg path
-os.environ["PATH"] += os.pathsep + "/usr/bin"
-
 
 def transcribe_audio(file_path: str):
     """
