@@ -3,6 +3,7 @@ from app.whisper_service import transcribe_audio
 import shutil
 import uuid
 import os
+import subprocess
 
 router = APIRouter()
 
@@ -34,3 +35,12 @@ async def transcribe_audio_file(file: UploadFile = File(...)):
         return {"transcription": transcription}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/check-ffmpeg")
+def check_ffmpeg():
+    try:
+        result = subprocess.run(["ffmpeg", "-version"], capture_output=True, text=True)
+        return {"status": "success", "output": result.stdout}
+    except FileNotFoundError:
+        return {"status": "error", "message": "ffmpeg not installed"}
