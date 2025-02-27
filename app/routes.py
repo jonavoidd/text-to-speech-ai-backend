@@ -1,5 +1,5 @@
 from fastapi import APIRouter, UploadFile, File, HTTPException
-from app.whisper_service import transcribe_audio
+from whisper_service import transcribe_audio
 import shutil
 import uuid
 import os

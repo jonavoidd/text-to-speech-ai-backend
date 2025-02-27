@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.routes import router
-from app.websocket import websocket_endpoint
+from routes import router
+from websocket import websocket_endpoint
 
 app = FastAPI(title="Voice to Text AI")
 
