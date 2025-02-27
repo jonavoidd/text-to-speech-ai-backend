@@ -1,6 +1,6 @@
 from fastapi import APIRouter, WebSocket, WebSocketDisconnect
 from loguru import logger
-from whisper_service import transcribe_audio
+from app.whisper_service import transcribe_audio
 import tempfile
 import asyncio
 import os
