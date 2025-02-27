@@ -37,7 +37,7 @@ async def transcribe_audio_file(file: UploadFile = File(...)):
         raise HTTPException(status_code=500, detail=str(e))
 
 
-@app.get("/check-ffmpeg")
+@router.get("/check-ffmpeg")
 def check_ffmpeg():
     try:
         result = subprocess.run(["ffmpeg", "-version"], capture_output=True, text=True)
