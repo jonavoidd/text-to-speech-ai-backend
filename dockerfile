@@ -1,9 +1,8 @@
-# Use Python 3.10 as the base image
-FROM python:3.10-slim
+# Use a base image with ffmpeg pre-installed
+FROM jrottenberg/ffmpeg:4.4-ubuntu
 
-# Install ffmpeg and clean up apt cache
-RUN apt-get update && apt-get install -y ffmpeg && \
-    apt-get clean && rm -rf /var/lib/apt/lists/*
+# Install Python
+RUN apt-get update && apt-get install -y python3 python3-pip
 
 # Set working directory inside the container
 WORKDIR /app
