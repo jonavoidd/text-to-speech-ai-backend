@@ -9,7 +9,7 @@ app = FastAPI(title="Voice to Text AI")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://text-to-speec-ai-frontend.vercel.app"],
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
